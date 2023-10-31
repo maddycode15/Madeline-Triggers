@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioTriggerFreddy : MonoBehaviour
@@ -9,12 +10,25 @@ public class AudioTriggerFreddy : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        audio.Play();
+
+        
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+
+        if (other.CompareTag("Player"))
+
+        {
+            audio.Play();
+
+        }
     }
+
 }
