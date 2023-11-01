@@ -15,6 +15,14 @@ public class SimpleCharacterController : MonoBehaviour
 
     void Update()
     {
+
+if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+
+        
         // Check if the character is grounded.
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
 
